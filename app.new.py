@@ -125,16 +125,30 @@ def apply_custom_css():
 
         .stButton > button {
             background: linear-gradient(135deg, #f8fafc 0%, #dfe7f5 100%);
-            color: #0f172a;
-            border: none;
+            color: #0f172a !important;
+            border: 1px solid rgba(148,163,184,0.60);
             border-radius: 12px;
             font-weight: 700;
             padding: 0.75rem 1.2rem;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
         }
 
         .stButton > button:hover {
             transform: translateY(-1px);
-            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+            box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+            filter: brightness(1.02);
+        }
+
+        .stSidebar .stButton > button {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            color: #f8fafc !important;
+            border: 1px solid rgba(125, 211, 252, 0.7);
+            font-weight: 700;
+        }
+
+        .stSidebar .stButton > button:hover {
+            background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+            color: #ffffff !important;
         }
 
         .stTextInput > div > div > input,
@@ -178,6 +192,26 @@ def apply_custom_css():
 
         .stDataFrame .stDataFrameContainer, .stDataFrameContainer {
             color: #f8fafc !important;
+        }
+
+        [data-testid="stSidebarNav"] {
+            background: rgba(15, 23, 42, 0.25);
+            border-radius: 12px;
+        }
+
+        [data-testid="stSidebarNav"] a,
+        [data-testid="stSidebarNav"] span,
+        [data-testid="stSidebarNav"] div,
+        [data-testid="stSidebarNav"] li,
+        [data-testid="stSidebarNav"] p {
+            color: #f8fafc !important;
+            opacity: 1 !important;
+            font-weight: 600;
+        }
+
+        [data-testid="stSidebarNav"] a:hover {
+            background: rgba(59, 130, 246, 0.18);
+            border-radius: 8px;
         }
 
         .info-box {
