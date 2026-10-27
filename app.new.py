@@ -123,7 +123,7 @@ def apply_custom_css():
             font-weight: 800 !important;
         }
 
-        /* Main buttons: keep text visible on dark background */
+        /* Main buttons */
         .stButton > button,
         .stFormSubmitButton > button,
         button[kind="primary"],
@@ -147,13 +147,15 @@ def apply_custom_css():
             transform: translateY(-1px);
         }
 
-        /* Sidebar dropdown + page selector */
+        /* Sidebar selectbox and dropdown menu */
         [data-testid="stSidebar"] .stSelectbox label,
         [data-testid="stSidebar"] .stSelectbox p,
         [data-testid="stSidebar"] .stSelectbox div,
         [data-testid="stSidebar"] .stSelectbox span,
         [data-testid="stSidebar"] .stSelectbox [data-testid="stBaseSelectLabel"],
-        [data-testid="stSidebar"] .stSelectbox [data-testid="stBaseSelectContainer"] {
+        [data-testid="stSidebar"] .stSelectbox [data-testid="stBaseSelectContainer"],
+        [data-testid="stSidebar"] .stSelectbox [role="combobox"],
+        [data-testid="stSidebar"] .stSelectbox [data-baseweb="select"] {
             color: #f8fafc !important;
             background: transparent !important;
             opacity: 1 !important;
@@ -165,7 +167,7 @@ def apply_custom_css():
         div[data-baseweb="select"] [data-testid="stBaseSelectButton"],
         .stSelectbox > div > div > div,
         .stSelectbox > div > div {
-            background: rgba(15, 23, 42, 0.9) !important;
+            background: rgba(15, 23, 42, 0.92) !important;
             color: #f8fafc !important;
             border: 1px solid rgba(148, 163, 184, 0.45) !important;
             border-radius: 10px !important;
@@ -173,22 +175,37 @@ def apply_custom_css():
 
         div[data-baseweb="select"] [role="combobox"],
         div[data-baseweb="select"] [aria-expanded="true"],
-        .stSelectbox [data-testid="stBaseSelectContainer"] {
+        .stSelectbox [data-testid="stBaseSelectContainer"],
+        .stSelectbox [data-testid="stBaseSelectMenu"],
+        .stSelectbox [data-baseweb="popover"] {
             color: #f8fafc !important;
-            background: rgba(15, 23, 42, 0.9) !important;
+            background: rgba(15, 23, 42, 0.98) !important;
         }
 
         .stSelectbox [data-testid="stBaseSelectMenu"] {
             background: rgba(15, 23, 42, 0.98) !important;
-            color: #f8fafc !important;
-            border: 1px solid rgba(148, 163, 184, 0.4) !important;
+            border: 1px solid rgba(148, 163, 184, 0.45) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35) !important;
         }
 
         .stSelectbox [data-testid="stBaseSelectMenu"] li,
         .stSelectbox [data-testid="stBaseSelectMenu"] div,
-        .stSelectbox [data-testid="stBaseSelectMenu"] span {
+        .stSelectbox [data-testid="stBaseSelectMenu"] span,
+        .stSelectbox [data-testid="stBaseSelectMenu"] [role="option"],
+        .stSelectbox [data-testid="stBaseSelectMenu"] [role="listbox"],
+        .stSelectbox [data-baseweb="popover"] div,
+        .stSelectbox [data-baseweb="popover"] span,
+        .stSelectbox [data-baseweb="popover"] li {
             color: #f8fafc !important;
-            background: transparent !important;
+            background: rgba(15, 23, 42, 0.98) !important;
+            opacity: 1 !important;
+        }
+
+        .stSelectbox [data-testid="stBaseSelectMenu"] [role="option"][aria-selected="true"],
+        .stSelectbox [data-testid="stBaseSelectMenu"] [role="option"]:hover {
+            background: rgba(37, 99, 235, 0.55) !important;
+            color: #ffffff !important;
         }
 
         .stSidebar .stButton > button {
@@ -680,7 +697,7 @@ def welcome_page():
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    if st.button("Continue to Login", use_container_width=True):
+    if st.button("Login", use_container_width=True):
         st.session_state.welcome_seen = True
         st.rerun()
 
