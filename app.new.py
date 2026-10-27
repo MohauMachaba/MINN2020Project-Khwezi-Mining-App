@@ -123,31 +123,83 @@ def apply_custom_css():
             font-weight: 800 !important;
         }
 
-        .stButton > button {
-            background: linear-gradient(135deg, #f8fafc 0%, #dfe7f5 100%);
-            color: #0f172a !important;
-            border: 1px solid rgba(148,163,184,0.60);
-            border-radius: 12px;
-            font-weight: 700;
-            padding: 0.75rem 1.2rem;
-            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+        /* Main buttons: keep text visible on dark background */
+        .stButton > button,
+        .stFormSubmitButton > button,
+        button[kind="primary"],
+        button[kind="secondary"] {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%) !important;
+            color: #f8fafc !important;
+            border: 1px solid rgba(125, 211, 252, 0.8) !important;
+            border-radius: 12px !important;
+            font-weight: 800 !important;
+            padding: 0.75rem 1.2rem !important;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.12) !important;
+            text-shadow: none !important;
         }
 
-        .stButton > button:hover {
+        .stButton > button:hover,
+        .stFormSubmitButton > button:hover,
+        button[kind="primary"]:hover,
+        button[kind="secondary"]:hover {
+            background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%) !important;
+            color: #ffffff !important;
             transform: translateY(-1px);
-            box-shadow: 0 10px 18px rgba(0,0,0,0.12);
-            filter: brightness(1.02);
+        }
+
+        /* Sidebar dropdown + page selector */
+        [data-testid="stSidebar"] .stSelectbox label,
+        [data-testid="stSidebar"] .stSelectbox p,
+        [data-testid="stSidebar"] .stSelectbox div,
+        [data-testid="stSidebar"] .stSelectbox span,
+        [data-testid="stSidebar"] .stSelectbox [data-testid="stBaseSelectLabel"],
+        [data-testid="stSidebar"] .stSelectbox [data-testid="stBaseSelectContainer"] {
+            color: #f8fafc !important;
+            background: transparent !important;
+            opacity: 1 !important;
+            font-weight: 700 !important;
+        }
+
+        div[data-baseweb="select"] > div,
+        div[data-baseweb="select"] > div > div,
+        div[data-baseweb="select"] [data-testid="stBaseSelectButton"],
+        .stSelectbox > div > div > div,
+        .stSelectbox > div > div {
+            background: rgba(15, 23, 42, 0.9) !important;
+            color: #f8fafc !important;
+            border: 1px solid rgba(148, 163, 184, 0.45) !important;
+            border-radius: 10px !important;
+        }
+
+        div[data-baseweb="select"] [role="combobox"],
+        div[data-baseweb="select"] [aria-expanded="true"],
+        .stSelectbox [data-testid="stBaseSelectContainer"] {
+            color: #f8fafc !important;
+            background: rgba(15, 23, 42, 0.9) !important;
+        }
+
+        .stSelectbox [data-testid="stBaseSelectMenu"] {
+            background: rgba(15, 23, 42, 0.98) !important;
+            color: #f8fafc !important;
+            border: 1px solid rgba(148, 163, 184, 0.4) !important;
+        }
+
+        .stSelectbox [data-testid="stBaseSelectMenu"] li,
+        .stSelectbox [data-testid="stBaseSelectMenu"] div,
+        .stSelectbox [data-testid="stBaseSelectMenu"] span {
+            color: #f8fafc !important;
+            background: transparent !important;
         }
 
         .stSidebar .stButton > button {
-            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%) !important;
             color: #f8fafc !important;
             border: 1px solid rgba(125, 211, 252, 0.7);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .stSidebar .stButton > button:hover {
-            background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%) !important;
             color: #ffffff !important;
         }
 
